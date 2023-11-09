@@ -1,0 +1,50 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+ <main id="main" class="main">
+
+     <div class="pagetitle">
+      <h1>{{ stol.nomi }}</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" style="font-size: 20px;"><a href="">buyutrma olish</a></li>
+          <li class="breadcrumb-item " style="font-size: 20px;"><a href="{% url 'buyurtmalar' stol.id %}">bekor qilish</a></li>
+        </ol>
+      </nav>
+    </div>
+
+     <section class="section">
+      <div class="row align-items-top mt-3">
+        {% for x in category %}
+
+        <div class="pagetitle">
+          <h1>{{ x.nomi }}</h1>
+        </div>
+
+        {% for i in product %}
+          {% if i.category.nomi == x.nomi %}
+          <form method="POST" class="col-lg-3">
+          {% csrf_token %}
+          <div class="card">
+            <img src="{{ i.image.url }}" height="200" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ i.nomi }}</h5>
+              <p class="card-text">{{i.narxi}} So'm</p>
+              <select name="product" required="" id="id_product" hidden>
+                  <option value="{{i.id}}" selected="">{{i.nomi}}</option>
+              </select>
+
+              <input type="number" name="soni" class="form-control" value="0" min="0" id="id_soni">
+
+              <button class="btn btn-primary mt-3" type="submit">buyurtma olish</button>
+            </div>
+          </div>
+          </form>
+          {% endif %}
+        {% endfor %}
+        {% endfor %}
+      </div>
+    </section>
+
+ </main>
+{% endblock content %}

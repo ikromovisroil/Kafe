@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+ <main id="main" class="main">
+
+    <section class="section dashboard mt-3" >
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="row">
+
+            <div class="col-12">
+              <div class="card top-selling overflow-auto">
+
+                <div class="card-body pb-0">
+                  <h5 class="card-title">Maxsulotlar <span>| {{ product.count }} ta </span></h5>
+
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Nomi</th>
+                        <th scope="col">Narxi</th>
+                        <th scope="col">Taxrirlash</th>
+                        <th scope="col">O'chirish</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in product %}
+                      <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <th scope="row"><a href="#"><img src="{{ i.image.url }}" width="80" height="60" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">{{ i.nomi }}</a></td>
+                        <td class="fw-bold">{{ i.narxi }} so'm </td>
+                        <td> <a class="btn btn-primary" href="{% url 'product_detail' i.id %}"><i class="ri-ball-pen-line"></i></a> </td>
+                        <td> <a class="btn btn-danger" href="{% url 'product_delete' i.id %}"><i class="ri-delete-bin-line"></i></a></td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Top Selling -->
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+{% endblock content %}

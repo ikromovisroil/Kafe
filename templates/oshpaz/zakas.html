@@ -1,0 +1,55 @@
+{% extends 'base2.html' %}
+{% block content %}
+ <main id="main" class="main">
+
+    <section class="section dashboard mt-3" >
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="row">
+
+            <div class="col-12">
+              <div class="card top-selling overflow-auto">
+
+                <div class="card-body pb-0">
+                  <h5 class="card-title">Buyurtmalar <span>| {{ soni.count }} ta </span></h5>
+
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Nomi</th>
+                        <th scope="col">soni</th>
+                        <th scope="col">Buyurtma</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in zakas %}
+                      <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <th scope="row"><a><img src="{{ i.product.image.url }}" width="80" height="60" alt=""></a></th>
+                        <td><a class="text-primary fw-bold">{{ i.product.nomi }}</a></td>
+                        <td class="fw-bold">{{ i.soni }} ta </td>
+                        <td class="fw-bold">
+                          <a class="btn {% if i.buyurtma == True %} btn-primary  {% else %} btn-danger {% endif %}" href="{% url 'tayor' i.id %}"> {{ i.buyurtma }} </a>
+                        </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Top Selling -->
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+{% endblock content %}
