@@ -4,7 +4,6 @@ asgiref==3.7.2
 baron==0.10.1
 dj-database-url==2.1.0
 dj-email-url==1.0.6
-Django==4.2.6
 django-cache-url==3.4.4
 django-crispy-forms==2.1
 django-environ==0.11.2
