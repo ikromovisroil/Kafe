@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="402d863e-dc5f-426a-912f-71c358fbf3a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Kafe.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/avatars/348235-1-1024x1289_-_Copy_-_Copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/avatars/41-410103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/avatars/photo_2021-12-04_16-11-47.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/avatars/photo_2021-12-04_16-11-47_ebS6icK.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/avatars/photo_2022-04-15_11-29-38.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/0_RWcZSJ7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/0_SBOPsse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/0_fX1Zg0u.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/0_wPGrG04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/14-498.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/14-498_4KeVyRm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/14-498_BzIz7Kq.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/14-498_Y3kV89i.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/348235-1-1024x1289_-_Copy_-_Copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/41-410103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/41-410103_HbkdCBD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/eifeleva-bashnya-foto.orig.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/eifeleva-bashnya-foto.orig_gbYXc2r.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/eifeleva-bashnya-foto.orig_myq4xYR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/imgonline-com-ua-Res.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/imgonline-com-ua-Res_LLqi7iU.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/imgonline-com-ua-Res_unoqsWr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/kamni-v-reke.orig.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/kartinki-zimnij-pejzazh-43.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_img/product/kartinki-zimnij-pejzazh-43_Jf4xsW8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/card.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/messages-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/messages-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/messages-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/news-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/news-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/news-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/news-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/news-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/not-found.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/profile-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/slides-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/slides-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/slides-3.jpg" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2Xy7PWCMwoMT7yBwGklmohbapAO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="402d863e-dc5f-426a-912f-71c358fbf3a0" name="Changes" comment="" />
+      <created>1699589443847</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699589443847</updated>
+    </task>
+    <servers />
+  </component>
+</project>
