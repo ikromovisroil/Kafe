@@ -1,0 +1,15 @@
+{% for i in order %}
+<tr>
+    <th scope="row">{{ forloop.counter }}</th>
+    <td>{{ i.table.name }}</td>
+    <td>{{ i.product.name }}</td>
+    <td>{{ i.number }}</td>
+    <td>
+        {% if i.status %}
+        <a href="{% url 'order_status' i.pk %}" class="badge bg-success">Aktiv</a>
+        {% else %}
+        <a href="{% url 'order_status' i.pk %}" class="badge bg-danger">Passiv</a>
+        {% endif %}
+    </td>
+</tr>
+{% endfor %}

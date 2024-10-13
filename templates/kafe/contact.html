@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Contact</title>
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block content %}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Aloqa</h1>
+      <nav>
+
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section contact">
+      <div class="row gy-4">
+        <div class="col-xl-6">
+          <div class="row">
+            <div class="col-lg-6">
+                <div class="info-box card">
+                    <i class="bi bi-cursor"></i>
+                    <h3>Telegram</h3>
+                    <p><a href="https://t.me/Isroil_0309">Isroil_0309</a></p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="info-box card">
+                    <i class="bi bi-telephone"></i>
+                    <h3>Telefon</h3>
+                    <p><a href="tel:+998916800309">+998916800309</a></p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="info-box card">
+                    <i class="bi bi-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:ikromovisroil0309@gmail.com">ikromovisroil0309@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-clock"></i>
+                <h3>Murojat Vaqti</h3>
+                <p>dushanbadan - shanbagacha<br>9:00 dan - 06:00 gacha</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xl-6">
+          <div class="card p-4">
+            <h5>Talab va takliflar</h5>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                  <textarea class="form-control" name="name" rows="6" placeholder="Xabar yozing" required></textarea>
+                  </div>
+                </div>
+                <div class="text-center">
+                   <button type="submit" class="btn btn-primary">Yuborish</button>
+                </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

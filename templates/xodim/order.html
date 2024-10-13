@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Stol,kabina</title>
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block content %}
+
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <div class="d-flex justify-content-between top-selling">
+          <div class="w-100">
+               <a href="{% url 'order' table.pk %}" class="btn btn-success">Buyurtma olish</a>
+               <a href="{% url 'orders' table.pk %}" class="btn btn-primary">Buyurtmalar</a>
+          </div>
+          <small class="text-muted ">
+                    <div class="pagetitle prints">
+                      <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Maxsulot turi
+                          </button>
+                          <ul class="dropdown-menu">
+                            {% for i in category %}
+                            <li><a class="dropdown-item" href="{% url 'order' table.pk i.pk %}">{{i.name}}</a></li>
+                            {% endfor %}
+                          </ul>
+                      </div>
+                    </div>
+          </small>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="row align-items-top">
+        {% for i in product %}
+        <div class="col-lg-3">
+          <div class="card text-center">
+            <img src="{{ i.image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{i.name}}</h5>
+              <p class="card-text">{{ i.summa }} So'm</p>
+              <form method="POST">
+                {% csrf_token %}
+                <select name="product" required="" class="form-select" hidden="">
+                      <option value="{{i.id}}">{{i.name}}</option>
+                </select>
+                <input type="number" name="number" class="form-control col-9" required="">
+                <button class="btn btn-primary mt-3" type="submit">Saqlash</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+  </main>
+
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Product</title>
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block content %}
+
+  <main id="main" class="main">
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title">Maxsulotlar</h5>
+                <div class="mt-3">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                         + Maxsulot qo'shish
+                        </button>
+                        <div class="modal fade" id="verticalycentered" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <form method="POST" enctype="multipart/form-data" class="modal-content">
+                            {% csrf_token %}
+                            <div class="modal-header">
+                                <h5 class="modal-title">Maxsulot qo'shish</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-12">
+                                    <label class="form-label">Maxsulot turi</label>
+                                    <select name="category" class="form-select" required id="id_category">
+                                        <option value="" selected>---------</option>
+                                        {% for i in category %}
+                                        <option value="{{ i.id }}">{{ i.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_name" class="form-label">Nomi</label>
+                                    <input type="text" name="name" class="form-control" maxlength="50" required id="id_name">
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_title" class="form-label">Izox</label>
+                                    <textarea name="title" id="id_title" class="form-control" style="height: 100px"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_summa" class="form-label">Narxi</label>
+                                    <input type="number" name="summa" class="form-control" min="1" required id="id_summa">
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_image" class="form-label">Rasim</label>
+                                    <input type="file" class="form-control" name="image" accept="image/*" required id="id_image">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor qilish</button>
+                                <button type="submit" class="btn btn-primary">Saqlash</button>
+                            </div>
+                        </form>
+                        </div>
+                      </div>
+
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         Maxsulot turi
+                        </button>
+                        <ul class="dropdown-menu">
+                          {% for i in category %}
+                          <li><a class="dropdown-item" href="{% url 'product' i.pk %}">{{i.name}}</a></li>
+                          {% endfor %}
+                          <hr>
+                          <li><a class="dropdown-item" href="{% url 'product' %}">Hammasi</a></li>
+                        </ul>
+                </div>
+              </div>
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Narxi</th>
+                    <th scope="col">Holati</th>
+                    <th scope="col">O'chirish</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for i in product %}
+                  <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                      <td><a href="">{{i.name}}</a></td>
+                    <td>{{i.summa}}</td>
+                    <td>
+                        {% if i.status %}
+                        <a href="{% url 'product_status' i.pk %}" class="badge bg-success">Aktiv</a>
+                        {% else %}
+                        <a href="{% url 'product_status' i.pk %}" class="badge bg-danger">Passiv</a>
+                        {% endif %}
+                    </td>
+                    <td>
+                          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#verticalycentered{{ i.pk }}">
+                            <i class="ri-delete-bin-6-line"></i>
+                          </button>
+                          <div class="modal fade" id="verticalycentered{{ i.pk }}" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title">O'chirish</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    O'chirishni tasdiqlang
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="ri-close-fill"></i></button>
+                                  <a href="{% url 'product_delete' i.pk %}" class="btn btn-primary"><i class="ri-check-line"></i></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

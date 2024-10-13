@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Xodimlar</title>
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block content %}
+
+  <main id="main" class="main">
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title">Xodimlar</h5>
+                <div class="mt-3 ">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                    + Xodim qo'shish
+                  </button>
+                  <div class="modal fade" id="verticalycentered" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <form method="POST" enctype="multipart/form-data" class="modal-content">
+                            {% csrf_token %}
+                            <div class="modal-header">
+                                <h5 class="modal-title">Maxsulot qo'shish</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-12">
+                                    <label for="id_rol" class="form-label">Rol</label>
+                                    <select name="rol" id="id_rol" class="form-select" required>
+                                        <option value="" selected>---------</option>
+                                        {% for i in rol %}
+                                        <option value="{{ i.id }}">{{ i.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_first_name" class="form-label">Ism</label>
+                                    <input type="text" name="first_name" class="form-control" required="" id="id_first_name">
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_last_name" class="form-label">Familiya</label>
+                                    <input type="text" name="last_name" class="form-control" required="" id="id_last_name">
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_tel" class="form-label">Telefon</label>
+                                    <input type="text" name="tel" class="form-control" maxlength="150" id="id_tel">
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_username" class="form-label">Login</label>
+                                    <input type="text" name="username" class="form-control" maxlength="150" required="" id="id_username">
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_password1" class="form-label">Parol</label>
+                                    <input type="password"  name="password1" class="form-control" id="id_password1">
+                                </div>
+                                <div class="col-12">
+                                    <label for="id_password2" class="form-label">Parolni Tasdiqlang</label>
+                                    <input type="password"  name="password2" class="form-control" id="id_password2">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor qilish</button>
+                                <button type="submit" class="btn btn-primary">Saqlash</button>
+                            </div>
+                        </form>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <!-- Default Table -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Ismi</th>
+                    <th scope="col">Tel</th>
+                    <th scope="col">O'chirish</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for i in employees %}
+                  <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{i.rol.name}}</td>
+                    <td>{{i.get_full_name}}</td>
+                    <td>{{i.tel}}</td>
+                        <td>
+                          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#verticalycentered{{ i.pk }}">
+                            <i class="ri-delete-bin-6-line"></i>
+                          </button>
+                          <div class="modal fade" id="verticalycentered{{ i.pk }}" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title">O'chirish</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    O'chirishni tasdiqlang
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="ri-close-fill"></i></button>
+                                  <a href="" class="btn btn-primary"><i class="ri-check-line"></i></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+              <!-- End Default Table Example -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

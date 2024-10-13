@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Stol, Kabina</title>
+{% endblock title %}
+
+{% block css %}
+<!-- Add custom CSS here if needed -->
+{% endblock css %}
+
+{% block content %}
+
+<main id="main" class="main">
+
+    <section class="section">
+      <div class="row" id="table-list">
+       {% for i in table %}
+        <div class="col-6 col-md-4 col-lg-3" id="table-{{ i.id }}">
+            <div class="card">
+                <div class="card-body">
+                    <!-- Badge color changes depending on order_count -->
+                    <span class="badge {% if i.order_count > 0 %} bg-danger {% else %} bg-primary {% endif %}">
+                        {{ i.order_count }}
+                    </span>
+                    <h5 class="card-title text-center">
+                        {% if user.rol.id == 1 %}
+                        <a href="{% url 'order' i.pk %}">{{ i.name }}</a>
+                        {% elif user.rol.id == 3 %}
+                        <a href="{% url 'report' i.pk %}">{{ i.name }}</a>
+                        {% endif %}
+                    </h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+</main>
+
+{% endblock content %}
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Function to update the table's order count via AJAX
+        function updateTables() {
+            $.ajax({
+                url: '{% url "tables" %}',  // Update with your actual URL path if needed
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    // Clear and rebuild the table list
+                    $.each(data.tables, function(index, table) {
+                        let badgeClass = table.order_count > 0 ? 'bg-danger' : 'bg-primary';
+
+                        // Update the specific table's order count and badge color
+                        $('#table-' + table.id).find('.badge').text(table.order_count).attr('class', 'badge ' + badgeClass);
+                    });
+                }
+            });
+        }
+
+        // Set an interval to refresh the table list every 10 seconds (10000 milliseconds)
+        setInterval(updateTables, 10000);
+    });
+</script>
+
+{% endblock js %}

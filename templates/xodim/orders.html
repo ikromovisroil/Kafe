@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Buyurtmalar</title>
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block content %}
+
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <div class="d-flex justify-content-between top-selling">
+          <div class="w-100">
+               <a href="{% url 'order' table.pk %}" class="btn btn-success">Buyurtma olish</a>
+               <a href="{% url 'orders' table.pk %}" class="btn btn-primary">Buyurtmalar</a>
+          </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="row align-items-top">
+        {% for i in order %}
+        <div class="col-lg-3">
+          <div class="card text-center">
+            <img src="{{ i.product.image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{i.product.name}}</h5>
+              <p class="card-text">{{ i.number }} ta  {{i.summa_all}} so'm</p>
+              <div class="mt-3 text-center row">
+                  <div class="col-6">
+                      <!-- Vertically centered Modal-->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentere{{i.id}}">
+                    Taxrirlash
+                  </button>
+                  <div class="modal fade" id="verticalycentere{{i.id}}" tabindex="-1" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <form method="POST" action="{% url 'order_edit' i.pk %}" class="modal-content">
+                            {% csrf_token %}
+                            <div class="modal-header">
+                                <h5 class="modal-title">Taxrirlash</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="number" name="number" value="{{i.number}}" class="form-control" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+                                <button class="btn btn-primary" type="submit">Saqlash</button>
+                            </div>
+                        </form>
+                    </div>
+                  </div><!-- End Vertically centered Modal-->
+                    </div>
+                  <div class="col-6">
+                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#verticalycentered{{i.id}}">
+                        O'chirish
+                      </button>
+                      <div class="modal fade" id="verticalycentered{{i.id}}" tabindex="-1" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">O'chirish</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              O'chirishni tasdiqlang
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="ri-close-fill"></i></button>
+                              <a href="{% url 'order_delete' i.pk %}" class="btn btn-primary"><i class="ri-check-line"></i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+  </main>
+
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}
