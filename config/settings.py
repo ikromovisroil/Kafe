@@ -60,6 +60,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://canteen.uz',
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
