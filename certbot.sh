@@ -1,0 +1,1 @@
+certbot --nginx -d canteen.uz -d www.canteen.uz
